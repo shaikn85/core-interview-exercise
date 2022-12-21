@@ -23,8 +23,8 @@ def get_weather_json_info(city, country, degrees):
 def check_current_weather():
     data = requests.get("http://ipinfo.io/").json()
 
-    # Replaced a problematic character in order to show a clear city name in the response
-    city = data["city"].replace(chr(817), "")
+    # Replaced a problematic characters in order to show a clear city name in the response
+    city = data["city"].replace(chr(817), "").replace(chr(7830), "h")
 
     country = data["country"]
     location = data["loc"]
